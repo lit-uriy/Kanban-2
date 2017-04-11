@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/icon">
+        <file>Kanban_Board.ico</file>
+        <file>Pencil.ico</file>
+    </qresource>
+</RCC>
