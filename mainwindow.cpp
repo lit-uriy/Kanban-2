@@ -121,6 +121,8 @@ void MainWindow::SwitchScreenSize(){
  */
 void MainWindow::LoadLog(){
     QFile file;
+    QString msg;
+    msg = tr("Ошибка при открытии файла '%1'.\nПричина: %2");
 
     // --------------------------------
     file.setFileName("./data/todo_future.txt");
@@ -129,7 +131,9 @@ void MainWindow::LoadLog(){
         ui->txt_todo->appendPlainText(in.readAll());
         file.close();
     }else{
-        QMessageBox::information(0, "file error", file.errorString());
+        msg = msg.arg(QFileInfo(file).absoluteFilePath());
+        msg = msg.arg(file.errorString());
+        QMessageBox::information(0, "file error", msg);
     }
 
     // --------------------------------
@@ -139,7 +143,9 @@ void MainWindow::LoadLog(){
         ui->txt_todo_today->appendPlainText(in.readAll());
         file.close();
     }else{
-        QMessageBox::information(0, "file error", file.errorString());
+        msg = msg.arg(QFileInfo(file).absoluteFilePath());
+        msg = msg.arg(file.errorString());
+        QMessageBox::information(0, "file error", msg);
     }
 
     // --------------------------------
@@ -149,7 +155,9 @@ void MainWindow::LoadLog(){
         ui->txt_doing->appendPlainText(in.readAll());
         file.close();
     }else{
-        QMessageBox::information(0, "file error", file.errorString());
+        msg = msg.arg(QFileInfo(file).absoluteFilePath());
+        msg = msg.arg(file.errorString());
+        QMessageBox::information(0, "file error", msg);
     }
 
     // --------------------------------
@@ -159,7 +167,9 @@ void MainWindow::LoadLog(){
         ui->txt_waiting->appendPlainText(in.readAll());
         file.close();
     }else{
-        QMessageBox::information(0, "file error", file.errorString());
+        msg = msg.arg(QFileInfo(file).absoluteFilePath());
+        msg = msg.arg(file.errorString());
+        QMessageBox::information(0, "file error", msg);
     }
 
     // --------------------------------
@@ -169,7 +179,9 @@ void MainWindow::LoadLog(){
         ui->txt_done->appendPlainText(in.readAll());
         file.close();
     }else{
-        QMessageBox::information(0, "file error", file.errorString());
+        msg = msg.arg(QFileInfo(file).absoluteFilePath());
+        msg = msg.arg(file.errorString());
+        QMessageBox::information(0, "file error", msg);
     }
 
 
@@ -180,7 +192,9 @@ void MainWindow::LoadLog(){
         ui->txt_done_today->appendPlainText(in.readAll());
         file.close();
     }else{
-        QMessageBox::information(0, "file error", file.errorString());
+        msg = msg.arg(QFileInfo(file).absoluteFilePath());
+        msg = msg.arg(file.errorString());
+        QMessageBox::information(0, "file error", msg);
     }
 
     // --------------------------------
@@ -190,7 +204,9 @@ void MainWindow::LoadLog(){
         ui->txt_notes->appendPlainText(in.readAll());
         file.close();
     }else{
-        QMessageBox::information(0, "file error", file.errorString());
+        msg = msg.arg(QFileInfo(file).absoluteFilePath());
+        msg = msg.arg(file.errorString());
+        QMessageBox::information(0, "file error", msg);
     }
 
     // --------------------------------
@@ -200,7 +216,9 @@ void MainWindow::LoadLog(){
         ui->txt_reminder->appendPlainText(in.readAll());
         file.close();
     }else{
-        QMessageBox::information(0, "file error", file.errorString());
+        msg = msg.arg(QFileInfo(file).absoluteFilePath());
+        msg = msg.arg(file.errorString());
+        QMessageBox::information(0, "file error", msg);
     }
 }
 
